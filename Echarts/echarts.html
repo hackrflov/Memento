@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts Examples</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+    <!-- 引入JQuery 文件 -->
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        //  基于准备好的DOM，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图标的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+    <!-- 接下来画一个饼状图 -->
+    <div id="second" style="width:600px;height:400px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('second'));
+        myChart.setOption({
+            backgroundColor: '#2c343c',
+            //textStyle: {
+            //    color: 'rgba(255, 255, 255, 0.3)'
+            //},
+            series : [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    data:[
+                        {value:235, name:'视频广告'},
+                        {value:274, name:'联盟广告'},
+                        {value:310, name:'邮件营销'},
+                        {value:335, name:'直接访问'},
+                        {value:400, name:'搜索引擎'}
+                    ],
+                    roseType: 'angle',
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, 0.3)'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: 'rgba(255, 255, 255, 0.3)'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            // 设置扇形的颜色
+                            shadowBlur: 200,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        },
+                        // normal: {
+                        emphasis: {
+                            shadowBlur: 200,
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        });
+    </script>
+    <!-- 尝试使用动态数据画图 -->
+    <div id="third" style="height:600px;width=400px;"></div>
+    <script type="text/javascript">
+        var myChart3 = echarts.init(document.getElementById('third'));
+        var url = 'http://183.131.144.70/data.json';
+        
+        $.get(url).done(function (data) {
+            myChart3.setOption({
+                title: {
+                    text: '异步数据加载示例'
+                },
+                tooltip: {},
+                legend: {
+                    data: ['销量']
+                },
+                xAxis: {
+                    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: [data, 20, 36, 10, 10, 20] // data=5
+                }]
+            })
+        });
+    </script>
+    <!-- 交互组件 -->
+    <div id="forth" style="height:300px;width:800px;"></div>
+    <script type="text/javascript">
+        var myChart4 = echarts.init(document.getElementById('forth'));
+        var option = {
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'value'
+            },
+            dataZoom: [
+                {   // control x axis as default
+                    type: 'slider',
+                    xAxisIndex: 0,
+                    start: 10,
+                    end: 60
+                },
+                {
+                    type: 'inside',
+                    xAxisIndex: 0,
+                    start: 10,
+                    end: 60
+                },
+                {  
+                    type: 'slider',
+                    yAxisIndex: 0,
+                    start: 30,
+                    end: 80
+                },
+                {
+                    type: 'inside',
+                    yAxisIndex: 0,
+                    start: 30,
+                    end: 80
+                }
+            ],
+            series: [
+                {
+                    type: 'scatter',
+                    itemStyle: {
+                        normal: {
+                            opacity: 0.8
+                        }
+                    },
+                    symbolSize: function (val) {
+                        return val[2] * 40;
+                    },
+                    data: [["14.616","7.241","0.896"],["3.958","5.701","0.955"],["2.768","8.971","0.669"],["9.051","9.710","0.171"],["14.046","4.182","0.536"],["12.295","1.429","0.962"],["4.417","8.167","0.113"],["0.492","4.771","0.785"],["7.632","2.605","0.645"],["14.242","5.042","0.368"]]
+                }
+            ]
+        };
+        myChart4.setOption(option);
+    </script>
+</body>
+</html>
