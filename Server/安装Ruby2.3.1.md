@@ -1,3 +1,4 @@
+```bash
 # 安装开发工具集
 yum groupinstall "Development Tools"  
 
@@ -11,5 +12,4 @@ make install
 
 # 查看版本
 ruby -v  
-
-
+```
