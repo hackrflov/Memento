@@ -53,7 +53,7 @@
 - Continuity
 - Common Fate
 
-## Visulization Principles
+## Design Principles
 - Alaways start your bar from zero. Scales are critical!
 - Pie chart should always add up to 100.
 - Size of the graphic effect should be directly proportional to the numerical quantities.
@@ -61,7 +61,45 @@
 - Maximize data-ink ratio.
 - Avoid chart junk.
 
+## Mutli-dimension Visualization
++ No/little analytics
+    - Scatterplot Matrix: Put every dimension both in columns and rows to form a matrix (N x N in total and N*(N-1)/2 usable).
+    - Parallel Coordinates: Axes represent attributes, lines connecting axes represent items. 
+        - Limitation 1: It cannot handle large axes and items. [Use opacity, cluster or sampling to solve this] 
+        - Limitation 2: Correlations only between adjacent axes. [Add user interaction to drag or drop axes]
+        - Limitation 3: Ambiguity. [Use interactive highlighting or use curves]
+    - Flexible Linked Axes
+    - Radial Axis Techniques: Axes radiate from a common origin. [Most used: Star Plot]
+    - Table Lens
+    - LineUp
+    - Visual Attributes: Glyph as Marks
++ Simple Analytic Component
+    - Pixel-based Visualizations / Heat Maps: Each cell is a "pixel", value encoded using color, and meaning derived from ordering, if no ordering inherent, clustering is used.
++ String Analytics Components
+    - Dimensionality Reduction (e.g.PCA)
+
+## Map
+- Dot Map
+- Choropleth Map
+- Isarithmic Map: Color coding continuous phenomena
+- Cartograms: Size of region scaled to arttibute value
+- Flow Maps
+
+## Text Visualization
+- Tag Cloud / Word Cloud / Wordle: Change word size/color by frequency
+- Spark Clouds: Convey trends between multiple tag clouds over time
+- Theme River / Stream Graph: Thematic changes over time. Height = frequncy
+- Literature Fingerprinting
+
+## Software
+- tableau
+- Data-Driven Documents (D3.js)
+
 ## Books
 1. The Visual Display of Quantitative Information, Edward Tufte
 2. Show Me the Numbers, Stephen Few
 3. Visualization Analysis and Design, Tamara Munzner
+
+## Reference
+CS109
+
