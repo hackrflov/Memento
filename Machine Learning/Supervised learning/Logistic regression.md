@@ -12,6 +12,7 @@
 # use scikit-learn
 from sklearn.linear_model import LogisticRegression
 logreg = LogisticRegression()
+logreg.fit(X_train, Y_train)
 Y_pred = logreg.predict(X_test)
 acc_log = logreg.score(X_test, Y_test)
 ```
