@@ -40,9 +40,12 @@ imp.fit(X)
 imp.transform(X)
 ```
 
-## Generating polynomial features
+### Generating polynomial features
 
 
+## GridSearchCV
+`model_selection.GridSearchCV(estimator, param_grid)`  
+Exhaustive search over specified parameter values for an estimator. 
 
 
 
