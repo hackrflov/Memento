@@ -11,6 +11,7 @@
 ## 3.2 Feature Completion
 ## 3.3 Feature Extraction
 ## 3.4 Feature Importance
+## 3.5 Feature Composition
 
 # Step 4. Model Training
 ## 4.1 Model Selection
