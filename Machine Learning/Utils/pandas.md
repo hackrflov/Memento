@@ -14,3 +14,5 @@ df[['a','b']].groupby('a').agg(['mean','count']).sort_values(by=[('b','mean')], 
 + pd.to_datetime()
 + pd.get_dummies(): Convert categorical variable into dummy/indicator variables
 + pd.cut(): Return indices of half-open bins to which each value of x belongs
+
++ ~s: inverse boolean series
