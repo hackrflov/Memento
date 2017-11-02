@@ -10,6 +10,7 @@
 ## 3.1. Filling missing values
 
 # Step 4. Feature Engineering
+## 4.1. Categorical Features (Onehot/ Hash/ Label/ Count/ LabelCount/ Target/ NaN Encoding)
 ## 4.1. Generate polynomial features
 ## 4.2. Feature Extraction
 
