@@ -48,6 +48,9 @@ imp.transform(X)
 Exhaustive search over specified parameter values for an estimator. 
 
 
+## Cross Validation
+`model_selection.cross_val_score(estimator, X, y)`
+Evaluate a score by cross-validation
 
 
 
