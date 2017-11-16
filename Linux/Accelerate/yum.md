@@ -8,9 +8,9 @@
 `mv CentOS6-Base-163.repo /etc/yum.repos.d/CentOS-Base.repo`
 
 4. 执行yum源的更新命令
-    ```bash
+```bash
 yum clean all
 yum makecache
 yum update
-    ```
+```
 

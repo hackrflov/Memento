@@ -7,9 +7,13 @@ df[['a','b']].groupby('a').agg(['mean','count']).sort_values(by=[('b','mean')], 
 + df.value_counts(): show how many rows for each unique value
 + df.shape()
 + df.corr(): Compute pairwise correlation of columns, excluding NA/null values
++ df.sort_index(): Sort object by labels (along an axis)
++ df.pivot(): Produce 'pivot' table based on 3 columns of this DataFrame. Uses unique values from index / columns and fills with values.
++ df.drop(): Return new object with labels in requested axis removed.
 + s.unique(): return all unique values in series
 + s.isin(): return boolean array showing existing status in every position
 + s.str.startswith(): return boolean Series/array indicating whether each string in the Series/Index starts with passed pattern.
++ mi.swaplevel(): Swap level i with level j. Do not change the ordering of anything
 
 + pd.to_datetime()
 + pd.get_dummies(): Convert categorical variable into dummy/indicator variables
