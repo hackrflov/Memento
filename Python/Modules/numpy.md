@@ -1,0 +1,1 @@
+- `numpy.reshape(a, newshape)`: Gives a new shape to an array without changing its data.
