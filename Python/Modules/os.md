@@ -1,0 +1,6 @@
+- `os.remove(filename)`: remove a file
+- `os.remove(dirname)`: remove a directory
+- `os.mkdir(dirname)`: create a directory
+- `os.listdir(path)`: return entries in the directory
+- `os.rename(src, dst)`: rename a file or directory from src to dst
+- `os.chdir(path)`: change the current working directory to path

@@ -3,6 +3,7 @@
 
 ### string func
 + `str.join(sequence)` -> returns a string in which the string elements of sequence have been joined by str separator.
++ `str.replace(old, new[, max])` ->  replace with substring
 
 ### List generator
 > a = [x+1 if x == 3 else 0 for x in range(5)]
