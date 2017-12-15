@@ -10,6 +10,7 @@ df[['a','b']].groupby('a').agg(['mean','count']).sort_values(by=[('b','mean')], 
 + df.sort_index(): Sort object by labels (along an axis)
 + df.pivot(): Produce 'pivot' table based on 3 columns of this DataFrame. Uses unique values from index / columns and fills with values.
 + df.drop(): Return new object with labels in requested axis removed.
++ df.reset_index(): Transfer index values(multi-index) into columns.
 + s.unique(): return all unique values in series
 + s.isin(): return boolean array showing existing status in every position
 + s.str.startswith(): return boolean Series/array indicating whether each string in the Series/Index starts with passed pattern.
@@ -20,3 +21,10 @@ df[['a','b']].groupby('a').agg(['mean','count']).sort_values(by=[('b','mean')], 
 + pd.cut(): Return indices of half-open bins to which each value of x belongs
 
 + ~s: inverse boolean series
+
+
+```python
+# Write to same excel
+writer = pd.ExcelWriter(path)
+df.to_excel(writer, sheetname, encoding='utf-8', index=False, float_format='%.2f')
+writer.save()
