@@ -1,4 +1,5 @@
-- `re.search(patter, str).group()`: 挑出匹配的
+- `re.search(pattern, str).group()`: 挑出匹配的
+- `re.findall(parttern, str)`: 找出全部
 
 非贪婪模式: .*?
 前置匹配: (?<=)

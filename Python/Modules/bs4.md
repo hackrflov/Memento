@@ -1,7 +1,7 @@
 Installation
 ------------
 ```bash
-$ pip install beautifulsoup4
+$ pip install beautifulsoup4 lxml
 ```
 Usage
 -----
