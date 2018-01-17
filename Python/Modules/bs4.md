@@ -14,6 +14,7 @@ Methods
 -------
 - soup.tagname[classname]
 - soup.tagname.get(classname)
-- soup.find_all(name, attrs, recursive, text, \*\*kwargs)
+- soup.find_all(name, attrs, recursive, text, \*\*kwargs): use`recursive=False`to find direct children
 - soup.find(name, attrs, recursive, text, \*\*kwargs)
 - soup.select(tag + blank + attr)
+- soup.get_text(separator)

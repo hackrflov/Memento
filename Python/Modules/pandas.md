@@ -1,6 +1,12 @@
 ```python
 # Aggreagtion
 df[['a','b']].groupby('a').agg(['mean','count']).sort_values(by=[('b','mean')], ascending=False)
+
+# Write to multiple sheets
+from pandas import ExcelWriter
+writer = ExcelWriter(xls_path)
+df.to_excel(writer, sheet_name='sn')
+writer.save()
 ```
 
 ## Cheat-sheet
@@ -11,6 +17,8 @@ df[['a','b']].groupby('a').agg(['mean','count']).sort_values(by=[('b','mean')], 
 + df.pivot(): Produce 'pivot' table based on 3 columns of this DataFrame. Uses unique values from index / columns and fills with values.
 + df.drop(): Return new object with labels in requested axis removed.
 + df.reset_index(): Transfer index values(multi-index) into columns.
++ df.set_value(): Put single value at passed column and index (deprecated, use .at instead)
++ df.at[index, col]: Use to access and modify cell
 + s.unique(): return all unique values in series
 + s.isin(): return boolean array showing existing status in every position
 + s.str.startswith(): return boolean Series/array indicating whether each string in the Series/Index starts with passed pattern.
