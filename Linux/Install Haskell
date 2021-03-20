@@ -1,0 +1,5 @@
+apt-get install -y libgmp10=2:6.1.2+dfsg-2
+curl -sSL https://get.haskellstack.org/ | sh
+
+# add this in zsh
+export PATH="/usr/local/bin/:$PATH"
