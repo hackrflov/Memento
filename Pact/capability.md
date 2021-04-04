@@ -4,3 +4,9 @@ require-capability 是要求当前已有相应的能力，否则不允许执行�
 with-capability 是尝试立即获取相应能力，如果获取成功了，则在此范围内可执行一定代码
 signature的caps可以把交易限定在某个cap，这样比较安全
 @managed 则要求首先此能力必须先被安装过(install)，才能用来对比，变量可以储存在内存中，被多次调用、计算，比如我想交易10枚KDA，我可以设置一个manager其中amount=10，并在相应的function中检查传入的amount是不是比amount大（注意仅限在同一笔tx中，不同tx则不用考虑这个）。如果managed后面不加function，那么整个capability只能被访问一次
+
+注意，如果在sig中指定了cap，则除了在此cap中进行keyset校验，其他层面的校验全部会报错！
+如果没有在cap里检验keyset，则无所谓cap的参数是否匹配，只要指定即可
+注意，跨module之间调用capability，需要先install，但install过后还是需要with-capability才能真正校验！
+
+尽量不要在直接调用的fun里面用enforce-guard，否则不方便调用
