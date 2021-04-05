@@ -1,0 +1,5 @@
+npm config set prefix="/mnt/d/npm-global"
+
+vim ~/.zshrc
+alias code='/mnt/d/softwares/Microsoft\ VS\ Code/bin/code'
+source ~/.zshrc
