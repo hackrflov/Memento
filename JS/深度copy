@@ -1,0 +1,5 @@
+不要使用Object.assign来执行重复多次复制，修改的时候容易出问题，请使用loadsh的cloneDeep
+https://lodash.com/docs/4.17.15#cloneDeep
+
+或者
+const clone = JSON.parse(JSON.stringify(a));
