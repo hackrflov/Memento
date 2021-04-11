@@ -3,15 +3,23 @@
 GENERATE_SOURCEMAP=false
 （为了隐藏源码）
 
-然后在public里新建.htaccess
-写入
-Options -MultiViews
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QSA,L]
-（为了支持router）
-
 npm run build会生成build文件夹，这里面已经不包含map，所以隐藏了源码
+
+
+为了支持react-router
+1.sudo a2enmod rewrite
+2.Open up /etc/apache2/apache2.conf
+3.Paste in this with the path to your root:
+<Directory "/var/www/PATH_TO_YOUR_ROOT">
+    RewriteEngine on
+    # Don't rewrite files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    # Rewrite everything else to index.html to allow html5 state links
+    RewriteRule ^ index.html [L]
+</Directory>
+4.sudo service apache2 restart
 
 接下来转移到服务器目录中
 rm -r /var/www/html; cp  -rTf ~/your-project/build /var/www/html
