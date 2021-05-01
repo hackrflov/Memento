@@ -7,7 +7,7 @@ npm run build会生成build文件夹，这里面已经不包含map，所以隐�
 
 
 为了支持react-router
-1.sudo a2enmod rewrite
+1.a2enmod rewrite
 2.Open up /etc/apache2/apache2.conf
 3.Paste in this with the path to your root:
 <Directory "/var/www/PATH_TO_YOUR_ROOT">
