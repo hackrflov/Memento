@@ -43,3 +43,6 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 ###### 安装Apache
 apt install apache2
 
+###### 配置Pip
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip install pip -U
