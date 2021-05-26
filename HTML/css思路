@@ -1,0 +1,4 @@
+竖向居中，使用tailwind实现
+<div class="flex items-center">
+  <element>
+</div>
