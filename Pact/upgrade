@@ -1,0 +1,1 @@
+升级的时候，不要放任何capability，否则会报key failure错误
