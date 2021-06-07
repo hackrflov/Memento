@@ -54,4 +54,5 @@ pip install --upgrade pip
 apt-get install mysql-server
 
 ###### 配置npm
-apt-get install nodejs npm
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install -y nodejs
