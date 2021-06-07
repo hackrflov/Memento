@@ -52,3 +52,6 @@ pip install --upgrade pip
 
 ###### 配置Mysql
 apt-get install mysql-server
+
+###### 配置npm
+apt-get install nodejs npm
