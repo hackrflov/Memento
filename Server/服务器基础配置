@@ -43,6 +43,7 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 
 ###### 安装Apache
 apt install apache2
+a2enmod proxy proxy_http
 
 ###### 配置Pip
 apt-get install python3-pip
@@ -52,6 +53,7 @@ pip install --upgrade pip
 
 ###### 配置Mysql
 apt-get install mysql-server
+mysql_secure_installation
 
 ###### 配置npm
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
