@@ -7,6 +7,7 @@ passwd
 
 # 先安装SSH
 apt-get update
+apt-get upgrade -y
 apt-get install openssh-server openssh-client
 
 # 修改配置文件
@@ -47,3 +48,6 @@ apt install apache2
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install pip -U
 pip install --upgrade pip
+
+###### 配置Mysql
+apt-get install mysql-server
